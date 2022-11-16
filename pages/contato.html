@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato Hotel UFJF</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/style.css" media="all">
+    <link rel="stylesheet" href="/assets/css/media-query2.css">
+</head>
+<body onresize="mudouTamanho()">
+    <header>
+        <h1>Hotel UFJF</h1>
+        <i id="burguer" class="material-icons" onclick="clickMenu()">menu</i>
+        <menu id="itens">
+            <ul>
+                <li><a href="/pages/index.html">Home</a></li>
+                <li><a href="/pages/contato.html">Contato</a></li>
+                <li><a href="/pages/sobre.html">Sobre</a></li>
+            </ul>
+        </menu>
+    </header>
+    <main>
+        <section>
+            <form action="contato.php" method="POST" autocomplete="on">
+                <fieldset>
+                    <legend>Contato</legend>
+
+                    <p>
+                        <label for="inome">Nome: </label>
+                        <input type="text" name="nome" id="inome" minlength="5" maxlength="30" required placeholder="Nome Completo">
+                    </p>
+
+                    <p>
+                        <label for="iemail">Email: </label>
+                        <input type="email" name="email" id="iemail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="teste@teste.com" autocomplete="email" required>
+                    </p>
+                    <p>
+                        <label for="itel">Telefone: </label>
+                        <input type="tel" name="tel" id="itel" autocomplete="tel" pattern="(\([0-9]{2}\))\s([9]{1})?([0-9]{4})-([0-9]{4})" placeholder="(XX) 99999-9999" title="Número de telefone precisa ser no formato (99) 9999-9999" required maxlength="12">
+                    </p>
+                    <p>
+                        <label for="imeio">Como me localizou?  </label><br>
+                        <input type="checkbox" name="google" id="igoogle"> <label for="igoogle">Google</label>
+                        <input type="checkbox" name="facebook" id="ifacebook"> <label for="ifacebook">Facebook</label>
+                        <input type="checkbox" name="amigos" id="iamigos"> <label for="iamigos">Amigos(a)</label><br>
+                        <input type="checkbox" name="instagram" id="iinstagram"> <label for="iinstagram">Instagram</label>
+                        <input type="checkbox" name="homepage" id="ihomepage"> <label for="ihomepage">Web Site</label>
+                        <input type="checkbox" name="jornal" id="ijornal"> <label for="ijornal">Jornal</label><br>
+                        <input type="checkbox" name="outros" id="ioutros"> <label for="ioutros">Outros</label><br>
+                    </p>
+                    <p>
+                        <label for="iassunto">Assunto: </label>
+                        <input type="text" name="assunto" id="iassunto" placeholder="Informe o assunto">
+                    </p>
+                    <p>
+                        <label for="imensagem">Mensagem: </label>
+                        <textarea name="mensagem" id="imensagem" cols="30" rows="10" placeholder="Escreva para mim aqui..."></textarea>
+                        
+                    </p>
+                </fieldset>
+                <p>
+                    <input type="submit" value="Enviar">
+                    <input type="reset" value="Limpar">
+                </p>
+            </form>
+        </section>
+    </main>
+    <script>
+
+        function mudouTamanho() {
+            if (window.innerWidth >= 768) {
+                itens.style.display = 'block'
+            } else {
+                itens.style.display = 'none'
+            }
+        }
+
+        function clickMenu() {
+            if (itens.style.display == 'block') {
+                itens.style.display = 'none'
+            } else {
+                itens.style.display = 'block'
+            }
+        }
+    </script>
+</body>
+</html>

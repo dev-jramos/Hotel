@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel UFJF</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/style.css" media="all">
+    <link rel="stylesheet" href="/assets/css/media-query2.css">
+</head>
+<body onresize="mudouTamanho()">
+    <header>
+        <h1>Hotel UFJF</h1>
+        <i id="burguer" class="material-icons" onclick="clickMenu()">menu</i>
+        <menu id="itens">
+            <ul>
+                <li><a href="/pages/index.html">Home</a></li>
+                <li><a href="/pages/contato.html">Contato</a></li>
+                <li><a href="/pages/sobre.html">Sobre</a></li>
+            </ul>
+        </menu>
+    </header>
+    <main>
+        <article>
+            <form action="reserva.php" method="POST">
+                <fieldset>
+                    <legend>Faça sua reserva</legend>
+                        <label for="ientrada">Check-In: </label>
+                        <input type="date" name="dentrada" id="ientrada">
+                        <label for="isaida">Check-Out:</label>
+                        <input type="date" name="dsaida" id="isaida"><br><br>
+                        <label for="iadulto">Número de Adultos: </label>
+                        <input type="text" name="qadulto" id="iadulto" maxlength="5" size="5">
+                        <br><label for="icrianca">Número de Criança idade 0 a 3 anos:</label>
+                        <input type="text" name="qcrianca" id="icrianca" maxlength="5" size="5"><br>
+                        <label for="icrianca">Número de Criança idade 4 a 12 anos:</label>
+                        <input type="text" name="qcrianca" id="icrianca" maxlength="5" size="5">
+                 </fieldset>
+
+                 <p>
+                    <input type="submit" value="Cadastrar Reserva">
+                    <input type="reset" value="Limpar">
+                </p>
+
+            </form>
+        
+        </article>
+    </main>
+    <script>
+
+        function mudouTamanho() {
+            if (window.innerWidth >= 768) {
+                itens.style.display = 'block'
+            } else {
+                itens.style.display = 'none'
+            }
+        }
+
+        function clickMenu() {
+            if (itens.style.display == 'block') {
+                itens.style.display = 'none'
+            } else {
+                itens.style.display = 'block'
+            }
+        }
+    </script>
+</body>
+</html>

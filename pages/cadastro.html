@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Hotel UFJF</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/style.css" media="all">
+    <link rel="stylesheet" href="/assets/css/media-query2.css">
+</head>
+<body onresize="mudouTamanho()">
+    <header>
+        <h1>Hotel UFJF</h1>
+        <i id="burguer" class="material-icons" onclick="clickMenu()">menu</i>
+        <menu id="itens">
+            <ul>
+                <li><a href="/pages/index.html">Home</a></li>
+                <li><a href="/pages/contato.html">Contato</a></li>
+                <li><a href="/pages/sobre.html">Sobre</a></li>
+            </ul>
+        </menu>
+    </header>
+    <main>
+        <section>
+            <form action="/pages/cadastro.php" method="POST" autocomplete="off">
+                <fieldset>
+                    <legend>Cadastro de dados pessoais</legend>
+
+                    <p>
+                        <label for="inome">Nome: </label>
+                        <input type="text" name="nome" id="inome" minlength="5" maxlength="30" required>
+                    </p>
+
+                    <p>
+                        <label for="icpf">CPF: </label>
+                        <input type="number" name="cpf" id="icpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}$" \
+                        title="Digite um CPF no formato: xxx.xxx.xxx-xx" placeholder="999.999.999-99" maxlength="11" required>
+                    </p>
+                    <p>
+                        <label for="inasc">Data de Nascimento: </label>
+                        <input type="date" name="nasc" id="inasc" required>
+                    </p>
+                    <p>
+                        <label for="isexo">Sexo: </label>
+                        <input type="radio" name="sexo" id="isexo" required>Masculino
+                        <input type="radio" name="sexo" id="isexo" required>Feminino
+                        <input type="radio" name="sexo" id="isexo" required>Outros
+                    </p>
+                    <p>
+                        <label for="iest">Estado Civil: </label>
+                        Solteiro (a):<input type="radio" name="sexo" id="iest">
+                        Casado (a):<input type="radio" name="sexo" id="iest">
+                        Viúvo (a)<input type="radio" name="sexo" id="iest">
+                        Divorciado (a):<input type="radio" name="sexo" id="iest">
+                    </p>
+                    <p>
+                        <label for="icidade">Cidade: </label>
+                        <input type="text" name="cidade" id="icidade">
+                    </p>
+                    <p>
+                        <label for="iestado">Estado: </label>
+                        <select id="iestado" name="estado" maxlength="20">
+                            <option value="" selected>--- Selecione ---</option>
+                            <option value="AC">Acre</option>
+                            <option value="AL">Alagoas</option>
+                            <option value="AP">Amapá</option>
+                            <option value="AM">Amazonas</option>
+                            <option value="BA">Bahia</option>
+                            <option value="CE">Ceará</option>
+                            <option value="DF">Distrito Federal</option>
+                            <option value="ES">Espírito Santo</option>
+                            <option value="GO">Goiás</option>
+                            <option value="MA">Maranhão</option>
+                            <option value="MT">Mato Grosso</option>
+                            <option value="MS">Mato Grosso do Sul</option>
+                            <option value="MG">Minas Gerais</option>
+                            <option value="PA">Pará</option>
+                            <option value="PB">Paraíba</option>
+                            <option value="PR">Paraná</option>
+                            <option value="PE">Pernambuco</option>
+                            <option value="PI">Piauí</option>
+                            <option value="RJ">Rio de Janeiro</option>
+                            <option value="RN">Rio Grande do Norte</option>
+                            <option value="RS">Rio Grande do Sul</option>
+                            <option value="RO">Rondônia</option>
+                            <option value="RR">Roraima</option>
+                            <option value="SC">Santa Catarina</option>
+                            <option value="SP">São Paulo</option>
+                            <option value="SE">Sergipe</option>
+                            <option value="TO">Tocantins</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="icep">Cep: </label>
+                        <input type="text" name="cep" id="icep" maxlength="5" size="5" placeholder="99999"> -
+                        <input type="text" name="cep" id="icep" maxlength="3" size="3" placeholder="999">
+                    </p>
+                    <p>
+                        <label for="iemail">Email: </label>
+                        <input type="email" name="email" id="iemail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="teste@teste.com" required>
+                    </p>
+                    <p>
+                        <label for="isenha">Senha: </label>
+                        <input type="password" name="senha" id="isenha" maxlength="12" size="12" required>
+                    </p>
+                    <p>
+                        <label for="icsenha">Confirme sua senha: </label>
+                        <input type="password" name="csenha" id="icsenha" maxlength="12" size="12" required>
+                    </p>
+                </fieldset>
+                <p>
+                    <input type="submit" value="Cadastrar">
+                    <input type="reset" value="Limpar">
+                </p>
+            </form>
+        </section>
+    </main>
+    <script>
+
+        function mudouTamanho() {
+            if (window.innerWidth >= 768) {
+                itens.style.display = 'block'
+            } else {
+                itens.style.display = 'none'
+            }
+        }
+
+        function clickMenu() {
+            if (itens.style.display == 'block') {
+                itens.style.display = 'none'
+            } else {
+                itens.style.display = 'block'
+            }
+        }
+    </script>
+</body>
+</html>
+

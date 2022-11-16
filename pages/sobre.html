@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Hotel UFJF</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/style.css" media="all">
+    <link rel="stylesheet" href="/assets/css/media-query2.css">
+</head>
+<body onresize="mudouTamanho()">
+    <header>
+        <h1>Hotel UFJF</h1>
+        <i id="burguer" class="material-icons" onclick="clickMenu()">menu</i>
+        <menu id="itens">
+            <ul>
+                <li><a href="/pages/index.html">Home</a></li>
+                <li><a href="/pages/contato.html">Contato</a></li>
+                <li><a href="/pages/sobre.html">Sobre</a></li>
+            </ul>
+        </menu>
+    </header>
+    <main>
+        <section>
+            <article>
+                <h1 class="center">O Hotel UFJF</h1>
+                <p>
+                    A Pousada da Lua nasceu em 2000 com o propósito de transformar uma aconchegante casa de veraneio, 
+                    na residência de nossos hóspedes em Campos do Jordão e por consequência os tornando AMIGOS também.
+                </p>
+                
+                <p>
+                Tudo começou com seis suítes e com o passar dos anos, as seis primeiras se tornaram oito e hoje contamos com vinte suítes preparadas carinhosamente para receber todos os tipos de casais e famílias, mas sem perder o aconchego e carinho que mantemos desde o início. Nosso objetivo é fidelizar todos aqueles que nos que nos dão a honra de poder recebê-los
+                </p>
+
+                 <p>
+                Localizada à apenas 800 metros do centro turístico de Campos do Jordão, a Praça do Capivari/Teleférico, no sentido Morro do Elefante. Oferecemos proximidade, mas com a tranquilidade de uma noite silenciosa na montanha.
+                </p>
+
+                <p>
+                Nossa cozinha é completa e está à disposição das mamães para que possam se sentir cada vez mais em casa, atendendo as necessidades dos bebês.
+
+                Apresentamos roteiros turísticos, orientando passeios que atendam à suas preferências de nossos hóspedes para que possam otimizar seu tempo e conhecer todas as belezas que Campos do Jordão dispõe.
+            </p>
+            </article>
+        </section>
+    </main>
+    <script>
+
+        function mudouTamanho() {
+            if (window.innerWidth >= 768) {
+                itens.style.display = 'block'
+            } else {
+                itens.style.display = 'none'
+            }
+        }
+
+        function clickMenu() {
+            if (itens.style.display == 'block') {
+                itens.style.display = 'none'
+            } else {
+                itens.style.display = 'block'
+            }
+        }
+    </script>
+</body>
+</html>
